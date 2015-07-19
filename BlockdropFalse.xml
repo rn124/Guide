@@ -1,0 +1,10 @@
+<blockdrops>
+  <rule>
+    <region>
+      <negative><rectangle min="0,0" max="0,0"/></negative>
+    </region>
+    <filter>
+      <block>obsidian</block>
+    </filter>
+  </rule>
+</blockdrops>
