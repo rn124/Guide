@@ -1,0 +1,39 @@
+<destroyables materials="OBSIDIAN;BEACON" completion="100%">
+  <destroyable owner="team" name="test">
+   <cuboid min="10,10,10" max="10,12,10"/>
+  </destroyable>
+ </destroyables>
+
+ <script>
+<![CDATA[
+match.on('start', function() {
+
+    setTimeout(function() {
+
+     //メッセージ
+     match.broadcast('`cモニュメントが軟化しました`r');
+
+     //モニュメントのy座標の範囲
+     for (var y = 10; y <= 12 ; y++) {
+
+      //モニュメントのx座標の範囲
+      for (var x = 10; x <= 10 ; x++) {
+
+       //モニュメントのz座標の範囲
+       for (var z = 10; z <= 10 ; z++) {
+
+        var block = match.getWorld().getBlock(x, y, z);
+
+        //OBSIDIANのとこにモニュメントのブロックを書く
+        if ( block[0] == 'OBSIDIAN' ) {
+
+         //BEACONのとこに軟化させるブロックを書く
+         match.getWorld().setBlock(x, y, z, 'BEACON', 0);
+        }
+       }
+      }
+     }
+    }, 180000); //軟化させる時間
+});
+]]>
+ </script>
